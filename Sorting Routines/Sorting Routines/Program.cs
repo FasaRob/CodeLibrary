@@ -39,34 +39,34 @@ namespace Sorting_Routines
         {
 
             int[] iNumberList = new int[10];
-            int temp = 0;
+            int iTempValue = 0;
 
             Console.WriteLine("Enter Bubble Sort Routine:");
+
             Console.WriteLine("Gathering List...");
             for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine("Enter value for list item number: " + i);
                 iNumberList[i] = int.Parse(Console.ReadLine());
             }
+
             Console.WriteLine("Display Captured Numbers...");
             foreach (int i in iNumberList)
                 Console.WriteLine(i);
-            Console.WriteLine("Sorting Array...");
 
-            for (int write  = 0; write < iNumberList.Length - 1; write++)
+            Console.WriteLine("Sorting Array...");
+            for (int iListPlacement = 0; iListPlacement < iNumberList.Length - 1; iListPlacement++)
             {
-                for (int sort = 0; sort < iNumberList.Length - 1; sort++)
+                for (int iSubListPlacement = 0; iSubListPlacement < iNumberList.Length - 1; iSubListPlacement++)
                 {
-                    if (iNumberList[sort] > iNumberList[sort +1])
+                    if (iNumberList[iSubListPlacement] > iNumberList[iSubListPlacement + 1])
                     {
-                        temp = iNumberList[sort + 1];
-                        iNumberList[sort + 1] = iNumberList[sort];
-                        iNumberList[sort] = temp;
+                        iTempValue = iNumberList[iSubListPlacement + 1];
+                        iNumberList[iSubListPlacement + 1] = iNumberList[iSubListPlacement];
+                        iNumberList[iSubListPlacement] = iTempValue;
                     }
                 }
             }
-
-            //Array.Sort(iNumberList);
 
             Console.WriteLine("Display Sorted Numbers...");
             foreach (int i in iNumberList)
