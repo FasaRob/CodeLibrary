@@ -39,6 +39,7 @@ namespace Sorting_Routines
         {
 
             int[] iNumberList = new int[10];
+            int temp = 0;
 
             Console.WriteLine("Enter Bubble Sort Routine:");
             Console.WriteLine("Gathering List...");
@@ -52,7 +53,20 @@ namespace Sorting_Routines
                 Console.WriteLine(i);
             Console.WriteLine("Sorting Array...");
 
-            Array.Sort(iNumberList);
+            for (int write  = 0; write < iNumberList.Length - 1; write++)
+            {
+                for (int sort = 0; sort < iNumberList.Length - 1; sort++)
+                {
+                    if (iNumberList[sort] > iNumberList[sort +1])
+                    {
+                        temp = iNumberList[sort + 1];
+                        iNumberList[sort + 1] = iNumberList[sort];
+                        iNumberList[sort] = temp;
+                    }
+                }
+            }
+
+            //Array.Sort(iNumberList);
 
             Console.WriteLine("Display Sorted Numbers...");
             foreach (int i in iNumberList)
